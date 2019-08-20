@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>David's Travel Blog - Airlines</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<script src="../js/jquery-3.3.1.js"></script>
+	<script src="../js/handlebars-v4.0.11.js"></script>
+</head>
+
+<body>
+	<ul>
+		<li><a href="../index.html">Home</a></li>
+		<li><a href="amsterdam.html">Amsterdam</a></li>
+		<li><a href="flights.html">Flights</a></li>
+		<li><a href="airports.html">Airports</a></li>
+		<li><a class="activePage" href="airlines.html">Airlines</a></li>
+		<li><a href="destinations.html">Destinations</a></li>
+		<li><a href="countries.html">Countries</a></li>
+	</ul>
+	<div class="pageContent-container">
+		<h1>Airlines</h1>
+		<h4>Search by airline name or IATA code:</h4>
+		<input id="airlineSearchBox" type="text" class="textEntry" placeholder="Airline or Code">
+		<button id="airlineSearchButton" type="button" class="searchButton">Search</button>
+		<h4>Or, select an airline to view its attributes:</h4>
+		<div id="airlinesDropdown"></div>
+		<br />
+		<div id="airlinesTable"></div>
+		<h4>To add an airline, enter the airline's name, code, and base country. All fields are required.</h4>
+		<p>If the country is not available in the dropdown menu you will need to add it to the database first.</p>
+		<input id="newAirlineName" type="text" class="textEntry" placeholder="Airline Name" required>
+		<br />
+		<input id="newAirlineCode" type="text" class="textEntry" placeholder="IATA Airline Code (two chars)" required maxlength="2">
+		<br />
+		<div id="countriesDropdown"></div>
+		<br />
+		<button onclick="addAirline()" type="button" class="saveButton">Save to Database</button>
+		<br />
+		<br />
+	</div>
+	<!-- Handlebars template-->
+	<script id="airline-table-template" type="text/x-handlebars-template">
+			<table id='airline-table' class="dbTable">
+					<thead>
+							<tr>
+									<th>Name</th>
+									<th>Code</th>
+									<th>Country</th>
+							</tr>
+					</thead>
+					<tbody>
+							{{#airline}}
+							<tr>
+								<td class="tableCell">{{name}}</td>
+								<td class="tableCell">{{code}}</td>
+								<td class="tableCell">{{country}}</td>
+								<td class="tableCell">
+									 	<button id="delete({{code}})" onclick="deleteAirline('{{code}}')" type="button" class="saveButton">Delete</button>
+								</td>
+							</tr>
+							{{/airline}}
+					</tbody>
+			</table>
+	</script>
+	<script id="airline-dropdown-template" type="text/x-handlebars-template">
+			<select onchange="selectAirline()" id="airline-dropdown" class="dropdown">
+				<option value="" selected>Select all...</option>
+				{{#airline}}
+				<option value="{{code}}">{{name}} ({{code}})</option>
+				{{/airline}}
+			</select>
+	</script>
+	<script id="country-dropdown-template" type="text/x-handlebars-template">
+			<select id="country-dropdown" class="dropdown">
+				<option value="" disabled selected>Select a country...</option>
+				{{#country}}
+				<option value="{{name}}">{{name}}</option>
+				{{/country}}
+			</select>
+	</script>
+	<script src="../js/airlines.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Asynchronous JavaScript is the best!</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <form id="openWeatherMapGet">
+      <h1>Get Ya Weathah Here!</h1>
+        <img src="http://investba.com/wp-content/uploads/2013/01/ba-forecast-300x226.png">
+      <br />
+      <br />
+      <input type="text" name="zip" id="zipBox" placeholder="Zip Code">
+      <br />
+      <br />
+      <input type="text" name="city" id="cityBox" placeholder="City">
+      <input type="text" name="country" id="countryBox" placeholder="Country (Optional)">
+      <br />
+      <br />
+      <input type="submit" id="weatherSubmitButton">
+      <br />
+      <br />
+      <br />
+      <ul>
+        <li><span>City:&nbsp&nbsp</span><span id="returnedCity"><span></li>
+        <li><span>Temperature:&nbsp&nbsp</span><span id="returnedTemp"><span></li>
+        <li><span>Humidity:&nbsp&nbsp</span><span id="returnedHumidity"><span></li>
+      </ul>
+    </form>
+    <br />
+    <form id="httpBinPost">
+      <h1>C'mon Kobe, show me your POST!</h1>
+      <img src="http://www.sports-kings.com/wp-content/uploads/2015/12/kobe-jordan.jpg">
+      <br />
+      <br />
+      <input type="text" name="postText" id="postTextBox" placeholder="What will you send?">
+      <input type="submit" id="postSubmitButton">
+      <br />
+      <br />
+      <ul>
+        <li>
+          <span>HttpBin returned:&nbsp&nbsp</span><span id="returnedFromHttpBin"></span>
+        </li>
+      </ul>
+    <script src="script.js"></script>
+  </body>
+</html>

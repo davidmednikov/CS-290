@@ -1,0 +1,17 @@
+<template id="countryTable">
+<table>
+  <tr>
+    <th>id</th>
+    <th>Country</th>
+    <th>Capital</th>
+  </tr>
+  {{#each dataList}}
+    <tr>
+      <td>{{@index}}</td>
+      <td>{{this.name}}</td>
+      <td>{{this.capital}}</td>
+      <td><button onclick="deleteCountry({{id}})">Delete</button></td>
+    </tr>
+  {{/each}}
+</table>
+</template>

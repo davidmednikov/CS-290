@@ -1,0 +1,45 @@
+<head>
+  <title>POST Request</title>
+  <style>
+  table {
+    border-collapse: collapse;
+  }
+
+  table, td, th {
+      border: 1px solid black;
+  }
+  </style>
+</head>
+<body>
+<h1>You sent the following data in a POST request:</h1>
+<h2>Query Parameters</h2>
+<table>
+  <tr>
+    <th>Index</th>
+    <th>Key</th>
+    <th>Value</th>
+  </tr>
+  {{#each queries}}
+    <tr>
+      <td>{{@index}}</td>
+      <td>{{this.name}}</td>
+      <td>{{this.value}}</td>
+    </tr>
+  {{/each}}
+</table>
+<h2>Body Parameters</h2>
+<table>
+  <tr>
+    <th>Index</th>
+    <th>Key</th>
+    <th>Value</th>
+  </tr>
+  {{#each body}}
+    <tr>
+      <td>{{@index}}</td>
+      <td>{{this.name}}</td>
+      <td>{{this.value}}</td>
+    </tr>
+  {{/each}}
+</table>
+</body>

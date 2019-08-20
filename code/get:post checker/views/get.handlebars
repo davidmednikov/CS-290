@@ -1,0 +1,29 @@
+<head>
+  <title>GET Request</title>
+  <style>
+  table {
+    border-collapse: collapse;
+  }
+
+  table, td, th {
+      border: 1px solid black;
+  }
+  </style>
+</head>
+<body>
+<h1>You sent the following data in a GET request:</h1>
+<table>
+  <tr>
+    <th>Index</th>
+    <th>Key</th>
+    <th>Value</th>
+  </tr>
+  {{#each dataList}}
+    <tr>
+      <td>{{@index}}</td>
+      <td>{{this.name}}</td>
+      <td>{{this.value}}</td>
+    </tr>
+  {{/each}}
+</table>
+</body>

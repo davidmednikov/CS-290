@@ -1,0 +1,27 @@
+<table>
+  <tr>
+    <th>id</th>
+    <th>Airline</th>
+    <th>Code</th>
+    <th>Flight Number</th>
+    <th>Origin</th>
+    <th>Destination</th>
+    <th>Departure</th>
+    <th>Arrival</th>
+    <th>Flight Time</th>
+  </tr>
+  {{#each dataList}}
+    <tr>
+      <td>{{@index}}</td>
+      <td>{{this.airline}}</td>
+      <td>{{this.code}}</td>
+      <td>{{this.flightNum}}</td>
+      <td>{{this.origin}}</td>
+      <td>{{this.destination}}</td>
+      <td>{{this.departure}}</td>
+      <td>{{this.arrival}}</td>
+      <td>{{this.flightTime}}</td>
+      <td><button onclick="deleteFlight({{id}})">Delete</button></td>
+    </tr>
+    {{/each}}
+  </table>

@@ -1,0 +1,129 @@
+<form id="search">
+<h4>Search by country name or capital:</h4>
+<input name="search" type="text">
+<button type="button" id="searchButton">Search</button>
+<h4>Or, select a country to view its attributes:</h4>
+<select name="countries">
+	<option value="none">Select a country...</option>
+	<!-- Eventually, this list will populate from the database -->
+	<option value="China">China</option>
+	<option value="France">France</option>
+	<option value="Japan">Japan</option>
+	<option value="Netherlands">Netherlands</option>
+	<option value="New Zealand">New Zealand</option>
+	<option value="Norway">Norway</option>
+	<option value="United Kingdom">United Kingdom</option>
+	<option value="United States">United States</option>
+</select>
+</form>
+<div id="countriesTable">
+</div>
+<h4>To add a country, enter the country's name and capital. All fields are required.</h4>
+<form id="addEntry">
+Country Name: <input name="countryName" type="text" required>
+<br />
+Capital: <input name="countryName" type="text" required>
+<br />
+<button type="button" id="saveButton">Save to Database</button>
+</form>
+
+<br />
+<br /><br />
+<br />
+
+<form id="search">
+<h4>Search by airline name or code:</h4>
+<input name="search" type="text">
+<button type="button" id="searchButton">Search</button>
+<h4>Or, select an airline to view its attributes:</h4>
+<select name="airlines">
+	<option value="none">Select an airline...</option>
+	<!-- Eventually, this list will populate from the database -->
+	<option value="China">Air France</option>
+	<option value="France">France</option>
+	<option value="Japan">Japan</option>
+	<option value="Netherlands">Netherlands</option>
+	<option value="New Zealand">New Zealand</option>
+	<option value="Norway">Norway</option>
+	<option value="United Kingdom">United Kingdom</option>
+	<option value="United States">United States</option>
+</select>
+</form>
+<div id="airlinesTable">
+</div>
+<h4>To add an airline, enter the airline's name, code, and base country. All fields are required.</h4>
+<p>If the country is not available in the dropdown menu you will need to add it to the database first.</p>
+<form id="addEntry">
+Airline Name: <input name="airlineName" type="text" required>
+<br />
+IATA Airline Code (two characters): <input name="airlineCode" type="text" required maxlength="2">
+<br />
+Base Country: <select name="countries">
+	<option value="none">Select a country...</option>
+	<!-- Eventually, this list will populate from the database -->
+	<option value="China">China</option>
+	<option value="France">France</option>
+	<option value="Japan">Japan</option>
+	<option value="Netherlands">Netherlands</option>
+	<option value="New Zealand">New Zealand</option>
+	<option value="Norway">Norway</option>
+	<option value="United Kingdom">United Kingdom</option>
+	<option value="United States">United States</option>
+</select>
+<br />
+<button type="button" id="saveButton">Save to Database</button>
+</form>
+
+<br />
+<br /><br />
+<br />
+
+
+
+
+<br />
+<br /><br />
+<br />
+
+<form id="search">
+<h4>Search by airline, flight number, origin, or destination:</h4>
+<input name="search" type="text">
+<button type="button" id="searchButton">Search</button>
+</form>
+<div id="flightsTable">
+</div>
+<h4>To add a flight, enter the flight's airline, flight number, departing airport, and destination airport. All fields are required.</h4>
+<p>If the country, airport, or airline is not available in the dropdown menu, you will need to add it to the database first.</p>
+<form id="addEntry">
+Airline: <select name="airline">
+</select>
+<br />
+Flight Number: <input name="flightNum" type="number" required min="1" max="9999">
+<br />
+Departs from: <select name="departureAirport">
+	<option value="none">Select an airport...</option>
+	<!-- Eventually, this list will populate from the database -->
+	<option value="China">China</option>
+	<option value="France">France</option>
+	<option value="Japan">Japan</option>
+	<option value="Netherlands">Netherlands</option>
+	<option value="New Zealand">New Zealand</option>
+	<option value="Norway">Norway</option>
+	<option value="United Kingdom">United Kingdom</option>
+	<option value="United States">United States</option>
+</select>
+<br />
+Arrives at: <select name="arrivalAirport">
+	<option value="none">Select an airport...</option>
+	<!-- Eventually, this list will populate from the database -->
+	<option value="China">China</option>
+	<option value="France">France</option>
+	<option value="Japan">Japan</option>
+	<option value="Netherlands">Netherlands</option>
+	<option value="New Zealand">New Zealand</option>
+	<option value="Norway">Norway</option>
+	<option value="United Kingdom">United Kingdom</option>
+	<option value="United States">United States</option>
+</select>
+<button type="button" id="saveButton">Save to Database</button>
+</form>

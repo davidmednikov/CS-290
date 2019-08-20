@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>David's Travel Blog</title>
+	<link rel="stylesheet" type="text/css" href="html/stylesheet.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<ul>
+		<li><a class="activePage" href="index.html">Home</a></li>
+		<li><a href="html/amsterdam.html">Amsterdam</a></li>
+		<li><a href="html/flights.html">Flights</a></li>
+		<li><a href="html/airports.html">Airports</a></li>
+		<li><a href="html/airlines.html">Airlines</a></li>
+		<li><a href="html/destinations.html">Destinations</a></li>
+		<li><a href="html/countries.html">Countries</a></li>
+	</ul>
+	<div class="pageContent-container">
+		<h1>David's Travel Blog</h1>
+		<div class="slideshow-container">
+			<div class="slides fade">
+				<div class="numbertext">1 / 3</div>
+				<img src="img/home/img1.jpg" style="width:100%">
+				<div class="text">The Forum in Rome, Italy</div>
+			</div>
+			<div class="slides fade">
+				<div class="numbertext">2 / 3</div>
+				<img src="img/home/img2.jpg" style="width:100%">
+				<div class="text">EDC Las Vegas 2017</div>
+				<!-- Image source: https://www.alivecoverage.com/festivals/edc-las-vegas-2017/ -->
+			</div>
+			<div class="slides fade">
+				<div class="numbertext">3 / 3</div>
+				<img src="img/home/img3.jpg" style="width:100%">
+				<div class="text">Lake Tahoe, California</div>
+			</div>
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+		</div>
+		<br>
+		<div style="text-align:center">
+			<span class="dot" onclick="currentSlide(1)"></span>
+			<span class="dot" onclick="currentSlide(2)"></span>
+			<span class="dot" onclick="currentSlide(3)"></span>
+		</div>
+		<h2>Welcome to my page!</h2>
+		<p>Hey! Thanks for visiting my travel blog. This blog consists of travel
+			guides (currently only Amsterdam) as well as a database of information
+			related to flights between 9 of the world's busiest airports.</p>
+			<p>Please use the horizontal menu above to navigate between the pages of this
+			website. Each entity in the database can be viewed on the page of its name.</p>
+			<p>The database pages will allow you to search, save, delete, and manipulate
+			entries	in the database per the requirements laid out in the CS340 final prompt.</p>
+			<p>This home page and the Amsterdam page satisfy the remaining requirements laid out in the CS290 final prompt.</p>
+			<p>I like to kill 2 birds with one stone, so this website serves as my final project
+			for both CS290 and CS340. But it's something I've been wanting to do for a while too!</p>
+			<br />
+		<h4>Scrollbox!</h4>
+		<div class="scrollbox">
+			SCROLLBOXES ARE FUN. SCROLLBOXES ARE FUN. SCROLLBOXES ARE FUN.
+			SCROLLBOXES ARE FUN. SCROLLBOXES ARE FUN. SCROLLBOXES ARE FUN.
+			SCROLLBOXES ARE FUN. SCROLLBOXES ARE FUN. SCROLLBOXES ARE FUN.
+			SCROLLBOXES ARE FUN. SCROLLBOXES ARE FUN. SCROLLBOXES ARE FUN.
+		</div>
+		<br />
+		<h4>Button!</h4>
+		<button class="downloadButton" type="button" onclick= "window.open('img/David Mednikov_May 2018 Resume.pdf', '_blank')"><i class="fa fa-download"></i>
+			Download my resume!</button>
+			<!-- fa-fa download class source: Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome -->
+		<br />
+		<h4>Check me out!</h4>
+		<ul>
+			<li><a href="mailto:mednikod@oregonstate.edu"><img src="img/social/mail.png"></a></li>
+			<!-- Image Source: https://www.iconsdb.com/white-icons/email-5-icon.html -->
+			<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+			<li><a target="_blank" href="https://linkedin.com/in/david-mednikov-25127246"><img src="img/social/linkedin.png"></a></li>
+			<!-- Image Source: https://static.licdn.com/scds/common/u/images/logos/linkedin/logo_linkedin_flat_white_93x21.png -->
+			<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+			<li><a target="_blank" href="https://github.com/davidmednikov"><img src="img/social/github.png"></a></li>
+			<!-- Image Source: https://github.com/logos -->
+			<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+			<li><a target="_blank" href="https://www.yelp.com/user_details?userid=lqW9UE7P2TeSKWYgQfiriA"><img src="img/social/yelp.png"></a></li>
+			<!-- Image Source: https://www.yelp.com/brand -->
+			<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+			<li><a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="img/social/fb.png"></a></li>
+			<!-- Image Source: https://en.facebookbrand.com/assets -->
+		</ul>
+	</div>
+	<script src="js/home.js"></script>
+</body>
+</html>

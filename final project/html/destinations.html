@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>David's Travel Blog - Destinations</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<script src="../js/jquery-3.3.1.js"></script>
+	<script src="../js/handlebars-v4.0.11.js"></script>
+</head>
+<body>
+	<ul>
+		<li><a href="../index.html">Home</a></li>
+		<li><a href="amsterdam.html">Amsterdam</a></li>
+		<li><a href="flights.html">Flights</a></li>
+		<li><a href="airports.html">Airports</a></li>
+		<li><a href="airlines.html">Airlines</a></li>
+		<li><a class="activePage" href="destinations.html">Destinations</a></li>
+		<li><a href="countries.html">Countries</a></li>
+	</ul>
+	<div class="pageContent-container">
+		<h1>Destinations</h1>
+		<h4>Search by airline, city, or airport:</h4>
+		<input id="destinationSearchBox" type="text" class="textEntry" placeholder="Airline, City, or Airport">
+		<button id="destinationSearchButton" type="button" class="searchButton">Search</button>
+		<br />
+		<h4>See which destinations an airline flies to:</h4>
+		<div id="airlinesDropdown"></div>
+		<h4>See which airlines offer service to an airport:</h4>
+		<div id="airportsDropdown"></div>
+		<br />
+		<div id="destinationsTable">
+		</div>
+		<h4>To add a destination, select the airline and airport of service. All fields are required.</h4>
+		<p>If the airline or airport is not available in the dropdown menu, you will need to add it to the database first.</p>
+		<div id="addDestAirlinesDropdown"></div>
+		<div id="addDestAirportsDropdown"></div>
+		<br />
+		<button id="saveDestinationButton" onclick="saveDestination()" type="button" class="saveButton">Save to Database</button>
+		<br />
+		<br />
+	</div>
+	<script id="destination-table-template" type="text/x-handlebars-template">
+			<table id='destination-table' class="dbTable">
+					<thead>
+							<tr>
+									<th>Airline</th>
+									<th>Flies to...</th>
+							</tr>
+					</thead>
+					<tbody>
+							{{#destination}}
+							<tr>
+								<td class="tableCell">{{name}}</td>
+								<td class="tableCell">{{city}}</td>
+								<td class="tableCell" id="pickMe'{{id}}'">{{destination}}</td>
+								<td class="tableCell">
+									 	<button id="update({{id}})" onclick="updateDestination('{{id}}')" type="button" class="saveButton">Update</button>
+								</td>
+								<td class="tableCell">
+									 	<button id="delete({{id}})" onclick="deleteDestination('{{id}}')" type="button" class="saveButton">Delete</button>
+								</td>
+							</tr>
+							{{/destination}}
+					</tbody>
+			</table>
+	</script>
+	<script id="airline-dropdown-template" type="text/x-handlebars-template">
+			<select onchange="selectDestAirline()" id="airline-dropdown" class="dropdown">
+				<option value="" selected>Select all airlines...</option>
+				{{#airline}}
+				<option value="{{code}}">{{name}} ({{code}})</option>
+				{{/airline}}
+			</select>
+	</script>
+	<script id="airport-dropdown-template" type="text/x-handlebars-template">
+			<select onchange="selectDestAirport()" id="airport-dropdown" class="dropdown">
+				<option value="" selected>Select all airports...</option>
+				{{#airport}}
+				<option value="{{code}}">{{name}} ({{code}})</option>
+				{{/airport}}
+			</select>
+	</script>
+	<script id="add-dest-airline-template" type="text/x-handlebars-template">
+			<select id="add-dest-airline-dropdown" class="dropdown">
+				<option value="" disabled selected>Airline...</option>
+				{{#airline}}
+				<option value="{{code}}">{{name}} ({{code}})</option>
+				{{/airline}}
+			</select>
+	</script>
+	<script id="add-dest-airport-template" type="text/x-handlebars-template">
+			<select id="add-dest-airport-dropdown" class="dropdown">
+				<option value="" disabled selected>Offers service to...</option>
+				{{#airport}}
+				<option value="{{code}}">{{name}} ({{code}})</option>
+				{{/airport}}
+			</select>
+	</script>
+	<script id="update-dropdown-template" type="text/x-handlebars-template">
+			<select id="update-dropdown" class="dropdown">
+				<option value="" disabled selected>New Destination...</option>
+				{{#airport}}
+				<option id="newDest{{id}}" value="{{code}}">{{city}} ({{code}})</option>
+				{{/airport}}
+			</select>
+	</script>
+<script src="../js/destinations.js"></script>
+</body>
+</html>

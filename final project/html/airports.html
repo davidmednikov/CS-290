@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>David's Travel Blog - Airports</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<script src="../js/jquery-3.3.1.js"></script>
+	<script src="../js/handlebars-v4.0.11.js"></script>
+</head>
+
+<body>
+	<ul>
+		<li><a href="../index.html">Home</a></li>
+		<li><a href="amsterdam.html">Amsterdam</a></li>
+		<li><a href="flights.html">Flights</a></li>
+		<li><a class="activePage" href="airports.html">Airports</a></li>
+		<li><a href="airlines.html">Airlines</a></li>
+		<li><a href="destinations.html">Destinations</a></li>
+		<li><a href="countries.html">Countries</a></li>
+	</ul>
+	<div class="pageContent-container">
+		<h1>Airports</h1>
+		<h4>Search by airport name, code, or city:</h4>
+		<input id="airportSearchBox" type="text" class="textEntry" placeholder="Airport, Code, or City">
+		<button id="airportSearchButton" type="button" class="searchButton">Search</button>
+		<h4>Or, select an airport to view its attributes:</h4>
+		<div id="airportsDropdown"></div>
+		<br />
+		<div id="airportsTable"></div>
+		<h4>To add an airport, enter the airport's name, code, city, and country. All fields are required.</h4>
+		<p>If the country is not available in the dropdown menu you will need to add it to the database first.</p>
+		<input id="newAirportName" class="textEntry" type="text" placeholder="Airport Name" required>
+		<br />
+		<input id="newAirportCode" class="textEntry" type="text" placeholder="IATA Airport Code (three chars)" required maxlength="3">
+		<br />
+		<input id="newAirportCity" class="textEntry" type="text" placeholder="City" required>
+		<br />
+		<div id="countriesDropdown"></div>
+		<br />
+		<button id="addAirportButton" onclick="addAirport()" type="button" class="saveButton">Save to Database</button>
+		<br />
+		<br />
+	</div>
+	<script id="airport-table-template" type="text/x-handlebars-template">
+			<table id='airport-table' class="dbTable">
+					<thead>
+							<tr>
+									<th>Name</th>
+									<th>Code</th>
+									<th>City</th>
+									<th>Country</th>
+							</tr>
+					</thead>
+					<tbody>
+							{{#airport}}
+							<tr>
+								<td id="editText{{code}}" class="tableCell">{{name}}</td>
+								<td class="tableCell">{{code}}</td>
+								<td class="tableCell">{{city}}</td>
+								<td id="editCountry{{code}}" class="tableCell">{{country}}</td>
+								<td class="tableCell">
+									 	<button id="update({{code}})" onclick="updateAirport('{{code}}')" type="button" class="saveButton">Update</button>
+								</td>
+								<td class="tableCell">
+									 	<button id="delete({{code}})" onclick="deleteAirport('{{code}}')" type="button" class="saveButton">Delete</button>
+								</td>
+							</tr>
+							{{/airport}}
+					</tbody>
+			</table>
+	</script>
+	<script id="airport-dropdown-template" type="text/x-handlebars-template">
+			<select onchange="selectAirport()" id="airport-dropdown" name="airports" class="dropdown">
+				<option value="" selected>Select all...</option>
+				{{#airport}}
+				<option value="{{code}}">{{name}} ({{code}})</option>
+				{{/airport}}
+			</select>
+	</script>
+	<script id="country-dropdown-template" type="text/x-handlebars-template">
+			<select id="country-dropdown" class="dropdown">
+				<option value="" disabled selected>Select a country...</option>
+				{{#country}}
+				<option value="{{name}}">{{name}}</option>
+				{{/country}}
+			</select>
+	</script>
+	<script id="update-dropdown-template" type="text/x-handlebars-template">
+			<select id="country-update-dropdown" class="dropdown">
+				<option value="" selected>Don't change me</option>
+				{{#country}}
+				<option value="{{name}}">{{name}}</option>
+				{{/country}}
+			</select>
+	</script>
+	<script src="../js/airports.js"></script>
+</body>
+</html>

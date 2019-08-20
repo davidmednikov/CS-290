@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Exercises</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<script src="jquery-3.3.1.js"></script>
+	<script src="handlebars-v4.0.11.js"></script>
+</head>
+
+<body>
+	<div class="pageContent-container">
+		<h1>Exercises</h1>
+		<div id="exerciseTable"></div>
+		<h4>To add an exercise, enter the name, reps, weight, date, and unit of weight measurement.</h4>
+		<input id="newExerciseName" class="textEntry" type="text" placeholder="Exercise Name" required>
+		<br />
+		<input id="newExerciseReps" class="textEntry" type="number" placeholder="How many reps?" required>
+		<br />
+		<input id="newExerciseWeight" class="textEntry" type="number" placeholder="How much weight?" required>
+		<br />
+		<input id="newExerciseDate"  type="text" class="textEntry" placeholder="Worked out on..." onfocus="(this.type='date')" required>
+		<br />
+		<select id="newExerciseUnit" class="dropdown">
+			<option value = "" selected disabled>Select unit of measurement...</option>
+			<option value = "0">Pounds</option>
+			<option value = "1">Kilograms ☭</option>
+		</select>
+		<br />
+		<button id="addExercise" onclick="addExercise()" type="button" class="saveButton">Save to Database</button>
+		<br />
+		<br />
+	</div>
+	<script id="exercise-table-template" type="text/x-handlebars-template">
+			<table id='exercise-table' class="dbTable">
+					<thead>
+							<tr>
+									<th>Name</th>
+									<th>Reps</th>
+									<th>Weight</th>
+									<th>Date</th>
+									<th>Units</th>
+							</tr>
+					</thead>
+					<tbody>
+							{{#exercise}}
+							<tr>
+								<td id="editName{{id}}" class="tableCell">{{name}}</td>
+								<td id="editReps{{id}}" class="tableCell">{{reps}}</td>
+								<td id="editWeight{{id}}" class="tableCell">{{weight}}</td>
+								<td id="editDate{{id}}" class="tableCell">{{date}}</td>
+								{{#if unit}}
+									<td id="editUnits{{id}}" class="tableCell">Kg</td>
+								{{else}}
+									<td id="editUnits{{id}}" class="tableCell">Lbs</td>
+								{{/if}}
+								<td class="tableCell">
+									 	<button id="update({{id}})" onclick="updateExercise('{{id}}')" type="button" class="saveButton">Update</button>
+								</td>
+								<td class="tableCell">
+									 	<button id="delete({{id}})" onclick="deleteExercise('{{id}}')" type="button" class="saveButton">Delete</button>
+								</td>
+							</tr>
+							{{/exercise}}
+					</tbody>
+			</table>
+	</script>
+	<script src="script.js"></script>
+</body>
+</html>

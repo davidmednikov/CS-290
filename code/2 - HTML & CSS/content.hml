@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>HW Assignment: HTML/CSS</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+  </head>
+  <body>
+    <table>
+      <caption>Lakers Youngins Per Game Statistics</caption>
+      <thead>
+        <tr>
+          <th />
+          <th>Points</th>
+          <th>Rebounds</th>
+          <th>Assists</th>
+          <th>Steals</th>
+          <th>Blocks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Lonzo Ball</th>
+          <td>10.2</td>
+          <td>6.9</td>
+          <td>7.2</td>
+          <td>1.7</td>
+          <td>0.8</td>
+        </tr>
+        <tr>
+          <th>Brandon Ingram</th>
+          <td>16.1</td>
+          <td>5.3</td>
+          <td>3.9</td>
+          <td>0.8</td>
+          <td>0.7</td>
+        </tr>
+        <tr>
+          <th>Kyle Kuzma</th>
+          <td>16.1</td>
+          <td>6.3</td>
+          <td>1.8</td>
+          <td>0.6</td>
+          <td>0.4</td>
+        </tr>
+        <tr>
+          <th>Julius Randle</th>
+          <td>16.2</td>
+          <td>8.0</td>
+          <td>2.6</td>
+          <td>0.5</td>
+          <td>0.6</td>
+        </tr>
+        <tr>
+          <th>Josh Hart</th>
+          <td>7.0</td>
+          <td>4.1</td>
+          <td>1.2</td>
+          <td>0.7</td>
+          <td>0.2</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <td colspan="2">Player and Avg. Points</td>
+        <td colspan="4">Other Statistical Categories</td>
+    </table>
+    <dl>
+      <dt>Points Leader:</dt>
+      <dd>Julius Randle</dd>
+      <dt>Rebounds Leader:</dt>
+      <dd>Julius Randle</dd>
+      <dt>Assists Leader:</dt>
+      <dd>Lonzo Ball</dt>
+    </dl>
+    <div class="outer-content">
+      <div class="inner-content">This is the Inner Content Div</div>
+    </div>
+    <br />
+    <br />
+    <form action="http://classes.engr.oregonstate.edu/eecs/winter2015/cs290-400/tools/class-content/form_tests/check_request.php" method="get">
+      <fieldset>
+        <legend>GET me some info!</legend>
+        <div class="form-question">
+          <label>Enter some text:
+            <input type="text" name="text_input" size="30" maxlength="100">
+          </label>
+        </div>
+        <div class="form-question">
+          <label>Enter a number:
+            <input type="number" name="numerical_input" size="30" maxlength="100">
+          </label>
+        </div>
+        <div class="form-question">
+          <label>Enter password:
+            <input type="password" name="password_input" size="30" maxlength="100">
+          </label>
+        </div>
+        <div class="candy-question">
+          <p>What's the best candy?
+            <br />
+            <label>
+              <input type="radio" name="candy" value="Snickers" />Snickers
+            </label>
+            <br />
+            <label>
+              <input type="radio" name="candy" value="Skittles" />Skittles
+            </label>
+            <br />
+            <label>
+              <input type="radio" name="candy" value="Mentos" />Mentos
+            </label>
+          </p>
+        </div>
+        <br />
+        <input type="submit" value="Submit me!" />
+      </fieldset>
+    </form>
+    <br />
+    <br />
+    <form action="http://classes.engr.oregonstate.edu/eecs/winter2015/cs290-400/tools/class-content/form_tests/check_request.php" method="post">
+      <fieldset>
+        <legend>POST me some info!</legend>
+        <div class="form-question">
+          <label>Enter some text:
+            <input type="text" name="text_input" size="30" maxlength="100">
+          </label>
+        </div>
+        <div class="form-question">
+          <label>Enter a number:
+            <input type="number" name="numerical_input" size="30" maxlength="100">
+          </label>
+        </div>
+        <div class="form-question">
+          <label>Enter password:
+            <input type="password" name="password_input" size="30" maxlength="100">
+          </label>
+        </div>
+        <div class="candy-question">
+          <p>What's the best candy?
+            <br />
+            <label>
+              <input type="radio" name="candy" value="Snickers" />Snickers
+            </label>
+            <br />
+            <label>
+              <input type="radio" name="candy" value="Skittles" />Skittles
+            </label>
+            <br />
+            <label>
+              <input type="radio" name="candy" value="Mentos" />Mentos
+            </label>
+          </p>
+        </div>
+        <br />
+        <input type="submit" value="Submit me!" />
+      </fieldset>
+    </form>
+  </body>
+</html>

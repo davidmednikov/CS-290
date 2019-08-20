@@ -1,0 +1,17 @@
+<table>
+  <tr>
+    <th>id</th>
+    <th>Name</th>
+    <th>Code</th>
+    <th>Country</th>
+  </tr>
+  {{#each dataList}}
+    <tr>
+      <td>{{@index}}</td>
+      <td>{{this.name}}</td>
+      <td>{{this.code}}</td>
+      <td>{{this.country}}</td>
+      <td><button onclick="deleteAirline({{id}})">Delete</button></td>
+    </tr>
+    {{/each}}
+  </table>

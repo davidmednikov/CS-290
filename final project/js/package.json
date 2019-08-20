@@ -1,0 +1,20 @@
+{
+  "name": "flights-db",
+  "version": "1.0.0",
+  "description": "A flights database with mySql, express, and node.js",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "OSU",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "cors": "^2.8.4",
+    "express": "^4.13.2",
+    "express-handlebars": "^2.0.1",
+    "express-session": "^1.11.3",
+    "forever": "^0.15.3",
+    "mysql": "^2.8.0"
+  }
+}

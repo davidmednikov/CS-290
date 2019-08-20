@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>David's Travel Blog - Countries</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<script src="../js/jquery-3.3.1.js"></script>
+	<script src="../js/handlebars-v4.0.11.js"></script>
+</head>
+
+<body>
+	<ul>
+		<li><a href="../index.html">Home</a></li>
+		<li><a href="amsterdam.html">Amsterdam</a></li>
+		<li><a href="flights.html">Flights</a></li>
+		<li><a href="airports.html">Airports</a></li>
+		<li><a href="airlines.html">Airlines</a></li>
+		<li><a href="destinations.html">Destinations</a></li>
+		<li><a class="activePage" href="countries.html">Countries</a></li>
+	</ul>
+	<div class="pageContent-container">
+		<h1>Countries</h1>
+		<h4>Search by country name or capital:</h4>
+		<input id="countrySearchBox" type="text" class="textEntry" placeholder="Country or Capital">
+		<button id="countrySearchButton" type="button" class="searchButton">Search</button>
+		<h4>Or, select a country to view its attributes:</h4>
+		<div id="countriesDropdown"></div>
+		<br />
+		<div id="countriesTable">
+		</div>
+		<h4>To add a country, enter the country's name and capital. All fields are required.</h4>
+		<input id="newCountryName" type="text" class="textEntry" placeholder="Country" required>
+		<br />
+		<input id="newCapital" type="text" class="textEntry" placeholder="Capital" required>
+		<br />
+		<button id="addCountryButton" onclick="addCountry()" type="button" class="saveButton">Save to Database</button>
+		<br />
+		<br />
+	</div>
+	<script id="country-table-template" type="text/x-handlebars-template">
+			<table id='country-table' class="dbTable">
+					<thead>
+							<tr>
+									<th>Country</th>
+									<th>Capital</th>
+							</tr>
+					</thead>
+					<tbody>
+							{{#country}}
+							<tr>
+								<td class="tableCell">{{name}}</td>
+								<td class="tableCell">{{capital}}</td>
+								<td class="tableCell">
+									 	<button id="delete({{name}})" onclick="deleteCountry('{{name}}')" type="button" class="saveButton">Delete</button>
+								</td>
+							</tr>
+							{{/country}}
+					</tbody>
+			</table>
+	</script>
+	<script id="country-dropdown-template" type="text/x-handlebars-template">
+			<select onchange="selectCountry()" id="country-dropdown" name="countries" class="dropdown">
+				<option value="" selected>Select all...</option>
+				{{#country}}
+				<option value="{{name}}">{{name}}</option>
+				{{/country}}
+			</select>
+	</script>
+	<script src="../js/countries.js"></script>
+</body>
+</html>

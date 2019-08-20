@@ -1,0 +1,314 @@
+body {
+  background-color: #222222;
+  margin: 0;
+  font-family: Verdana, Geneva, sans-serif;
+  color: white;
+}
+
+ul {
+  background-color: #375A7F;
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  overflow: hidden;
+  text-align: center;
+}
+
+body>ul {
+  background-color: #375A7F;
+  list-style-type: none;
+  margin: 0;
+  padding: 20px;
+  overflow: hidden;
+  text-align: center;
+}
+
+li {
+  display: inline;
+  padding: 10px;
+}
+
+li a {
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+
+body>ul>li a {
+  padding: 20px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+
+li a:hover {
+  background-color: #00BC8C;
+}
+
+.activePage {
+  background-color: #00BC8C;
+}
+
+div {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.slides {
+  display: none;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 0.75s;
+  animation-name: fade;
+  animation-duration: 0.75s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: .4
+  }
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: .4
+  }
+  to {
+    opacity: 1
+  }
+}
+
+h4, h3, h2, p {
+  color: white;
+}
+
+.scrollbox {
+  color: white;
+  height: 200px;
+  width: 900px;
+  border: 1px solid #ccc;
+  font-size: 48px;
+  overflow: auto;
+}
+
+.downloadButton {
+  background-color: #375A7F;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  padding: 15px 25px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.downloadButton:hover {
+  background-color: #00BC8C;
+}
+
+.searchButton {
+  background-color: #375A7F;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.saveButton {
+  background-color: #375A7F;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.searchButton:hover {
+	background-color: #00BC8C;
+}
+
+.saveButton:hover {
+	background-color: #00BC8C;
+}
+
+.textEntry {
+  width: 25%;
+  padding: 7.5px 15px;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: #444;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+	margin-bottom: 8px;
+}
+
+.dropdown {
+    width: 25%;
+		height: calc(2.15625rem + 3px);
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    color: #444;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+		margin-bottom: 8px;
+}
+
+.unorderedList {
+	background-color: transparent;
+	list-style-type: square;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	text-align: left;
+	font-size: 14px;
+}
+
+.unorderedListItem {
+	  display: block;
+	  padding: 0;
+}
+
+.dbTable {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1rem;
+  background-color: transparent;
+  border-collapse: collapse;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #fff;
+  text-align: left;
+}
+
+.tableCell {
+  padding: 0.25rem;
+  vertical-align: middle;
+  border-top: 1px solid #444;
+}
+
+.flightsDropdown {
+  width: 25%;
+  float: left;
+  height: calc(2.15625rem + 3px);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: #444;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  margin-bottom: 30px;
+  margin-right: 3px;
+}
+
+.updateDropdown {
+  width: 100%
+  float: left;
+  height: calc(2.15625rem + 3px);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: #444;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  margin-right: 3px;
+}
+
+.updateTextbox {
+  width: 75%;
+  padding: 7.5px 15px;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: #444;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.updateDiv {
+  width: 100%;
+  height: 100%;
+}

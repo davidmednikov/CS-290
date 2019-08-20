@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>David's Travel Blog - Flights</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<script src="../js/jquery-3.3.1.js"></script>
+	<script src="../js/handlebars-v4.0.11.js"></script>
+</head>
+
+<body>
+	<ul>
+		<li><a href="../index.html">Home</a></li>
+		<li><a href="amsterdam.html">Amsterdam</a></li>
+		<li><a class="activePage" href="flights.html">Flights</a></li>
+		<li><a href="airports.html">Airports</a></li>
+		<li><a href="airlines.html">Airlines</a></li>
+		<li><a href="destinations.html">Destinations</a></li>
+		<li><a href="countries.html">Countries</a></li>
+	</ul>
+	<div class="pageContent-container">
+		<h1>Flights</h1>
+		<h4>Search by airline, flight number, origin, or destination:</h4>
+		<input id="flightSearchBox" type="text" class="textEntry" placeholder="Airline, Flight #, City, or Airport">
+		<button id="flightSearchButton" type="button" class="searchButton">Search</button>
+		<br />
+		<h4>Or, filter by airline and/or airports:</h4>
+		<div>
+			<div id="airlinesDropdown"></div>
+			<div id="originDropdown"></div>
+			<div id="destinationDropdown"></div>
+		</div>
+		<br />
+		<div id="flightsTable">
+		</div>
+		<h4>To add a flight, enter the airline, flight number, and departure & arrival airports. All fields required.</h4>
+		<p>If the airline or airport is not available in the dropdown menu, you will need to add it to the database first.</p>
+		<div id="addFlightAirlines"></div>
+		<input id="newFlightNumber" type="number" class="textEntry" placeholder="Flight Number" required min="1" max="9999">
+		<br />
+		<div id="addFlightOrigins"></div>
+		<div id="addFlightDestinations"></div>
+		<input id="newFlightDepartTime" type="text" class="textEntry" placeholder="Departs at..." onfocus="(this.type='time')">
+		<br />
+		<input id="newFlightArriveTime" type="text" class="textEntry" placeholder="Lands at..." onfocus="(this.type='time')">
+		<br />
+		<input id="newFlightLength" type="text" class="textEntry" placeholder="Flight Length (Use PM if >12 hours)" onfocus="(this.type='time')">
+		<br />
+		<button id="saveFlightButton" onclick="addFlight()" type="button" class="saveButton">Save to Database</button>
+		<br />
+		<br />
+	</div>
+	<script id="flight-table-template" type="text/x-handlebars-template">
+			<table id='flight-table' class="dbTable">
+					<thead>
+							<tr>
+								<th>Airline</th>
+								<th>Code</th>
+								<th>Flight# </th>
+								<th>From</th>
+								<th>To</th>
+								<th>Departure</th>
+								<th>Arrival</th>
+								<th>Flight Time</th>
+							</tr>
+					</thead>
+					<tbody>
+							{{#flight}}
+							<tr>
+								<td class="tableCell">{{name}}</td>
+								<td class="tableCell">{{code}}</td>
+								<td class="tableCell">{{flightNum}}</td>
+								<td class="tableCell">{{depCity}} ({{origin}})</td>
+								<td class="tableCell">{{arrCity}} ({{destination}})</td>
+								<td class="tableCell">{{departTime}}</td>
+								<td class="tableCell">{{arriveTime}}</td>
+								<td class="tableCell">{{flightTime}}</td>
+								<td class="tableCell">
+										<button id="delete({{id}})" onclick="deleteFlight('{{id}}')" type="button" class="saveButton">Delete</button>
+								</td>
+							</tr>
+							{{/flight}}
+					</tbody>
+			</table>
+	</script>
+	<script id="airline-dropdown-template" type="text/x-handlebars-template">
+			<select id="airline-dropdown" onchange="flightFilter()" class="flightsDropdown" class="dropdown">
+				<option value="" selected>Select all airlines...</option>
+				{{#airline}}
+				<option value="{{code}}">{{name}} ({{code}})</option>
+				{{/airline}}
+			</select>
+	</script>
+	<script id="origin-dropdown-template" type="text/x-handlebars-template">
+			<select id="origin-dropdown" onchange="flightFilter()" ()"" class="flightsDropdown" class="dropdown">
+				<option value="" selected>Select all departure airports...</option>
+				{{#airport}}
+				<option value="{{code}}">{{name}} ({{code}})</option>
+				{{/airport}}
+			</select>
+	</script>
+	<script id="destination-dropdown-template" type="text/x-handlebars-template">
+			<select id="destination-dropdown" onchange="flightFilter()" class="flightsDropdown" class="dropdown">
+				<option value="" selected>Select all arrival airports...</option>
+				{{#airport}}
+				<option value="{{code}}">{{name}} ({{code}})</option>
+				{{/airport}}
+			</select>
+	</script>
+	<script id="add-flight-airline-template" type="text/x-handlebars-template">
+			<select id="add-flight-airline-dropdown" name="airlines" class="dropdown">
+				<option value="" disabled selected>Select an airline...</option>
+				{{#airline}}
+				<option value="{{code}}">{{name}} ({{code}})</option>
+				{{/airline}}
+			</select>
+	</script>
+	<script id="add-flight-origin-template" type="text/x-handlebars-template">
+			<select id="add-flight-origin-dropdown" name="airport" class="dropdown">
+				<option value="" disabled selected>Departs from...</option>
+				{{#airport}}
+				<option value="{{code}}">{{name}} ({{code}})</option>
+				{{/airport}}
+			</select>
+	</script>
+	<script id="add-flight-destination-template" type="text/x-handlebars-template">
+			<select id="add-flight-destination-dropdown" name="airport" class="dropdown">
+				<option value="" disabled selected>Arrives at...</option>
+				{{#airport}}
+				<option value="{{code}}">{{name}} ({{code}})</option>
+				{{/airport}}
+			</select>
+	</script>
+	<script src="../js/flights.js"></script>
+</body>
+</html>
